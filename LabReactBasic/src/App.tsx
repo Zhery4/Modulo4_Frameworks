@@ -1,10 +1,10 @@
-import { Button } from "@mui/material";
 import "./App.css";
+import { RouterComponent } from "./core/router/router.component";
 
 function App() {
   return (
     <>
-      <Button>Text</Button>
+      <RouterComponent />
     </>
   );
 }

@@ -8,7 +8,7 @@ import theme from "./core/themes/default.theme.tsx";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+        <App />
     </ThemeProvider>
   </StrictMode>
 );
