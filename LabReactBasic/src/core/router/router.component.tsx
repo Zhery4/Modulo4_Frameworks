@@ -5,11 +5,9 @@ import DetailScene from "../../scenes/Details/Detail.scene";
 
 export const RouterComponent = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={switchRoutes.root} element={<HomeScene />} />
-        <Route path={switchRoutes.details} element={<DetailScene />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path={switchRoutes.root} element={<HomeScene />} />
+      <Route path={switchRoutes.details} element={<DetailScene />} />
+    </Routes>
   );
 };

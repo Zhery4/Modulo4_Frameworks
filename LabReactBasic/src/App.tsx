@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./App.css";
 import { RouterComponent } from "./core/router/router.component";
 import { HeaderLayout } from "./layouts/header/Header.layout";
@@ -10,7 +11,7 @@ function App() {
         <nav>
           <ul>
             <li>
-              <a href="/">Home</a>
+              <Link to={"/"}>Home</Link>
             </li>
             <li>
               <a href="/RickAndMorty">Rick & Morty</a>
