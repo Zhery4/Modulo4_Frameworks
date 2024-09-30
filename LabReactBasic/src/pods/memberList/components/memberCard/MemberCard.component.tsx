@@ -1,9 +1,16 @@
-import { Button, Card, CardActions, CardContent, CardMedia } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+} from "@mui/material";
 import { IMember } from "../../memberList.vm";
 import emotionStyled from "@emotion/styled";
+import { useNavigate } from "react-router-dom";
 
 export interface IMemberCard {
-    member: IMember;
+  member: IMember;
 }
 
 const SCard = emotionStyled(Card)`
@@ -12,23 +19,27 @@ const SCard = emotionStyled(Card)`
 `;
 
 const SCardMedia = emotionStyled(CardMedia)`
-    height: 200px;
-
+    height: 200px;    
 `;
 
-
 const MemberCard = (props: IMemberCard) => {
-    return (<SCard>
-        <SCardMedia  image={props.member.avatar} title={props.member.login} />
-        <CardContent
-            title={props.member.login}
-        >
-            {props.member.login}
-        </CardContent>
-        <CardActions>
-            <Button size="small">Details</Button>
-        </CardActions>
-    </SCard>);
-}
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/detail/${props.member.id}`);
+  };
+
+  return (
+    <SCard>
+      <SCardMedia image={props.member.avatar} title={props.member.login} />
+      <CardContent title={props.member.login}>{props.member.login}</CardContent>
+      <CardActions>
+        <Button size="small" onClick={handleClick}>
+          Details
+        </Button>
+      </CardActions>
+    </SCard>
+  );
+};
 
 export default MemberCard;

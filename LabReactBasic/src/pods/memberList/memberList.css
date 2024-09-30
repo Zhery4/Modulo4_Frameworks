@@ -1,5 +1,40 @@
 .cards-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;  
+    gap: 1rem;
+}
+
+.page-selector{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.member-list-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.search-form{
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
