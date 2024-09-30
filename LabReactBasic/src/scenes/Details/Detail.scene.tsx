@@ -1,7 +1,11 @@
+import { useParams } from "react-router-dom";
+import { MemberDetailsContainer } from "../../pods/memberDetails/memberDetails.container";
+
 const DetailScene = () => {
+  const { id } = useParams();
   return (
     <div>
-      <h1>Detail Scene</h1>
+      <MemberDetailsContainer id={id!} />
     </div>
   );
 };

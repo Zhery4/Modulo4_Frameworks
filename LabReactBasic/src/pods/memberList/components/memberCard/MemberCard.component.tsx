@@ -26,7 +26,7 @@ const MemberCard = (props: IMemberCard) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/detail/${props.member.id}`);
+    navigate(`/detail/${props.member.login}`);
   };
 
   return (
