@@ -19,6 +19,7 @@ const MemberList = (props: IMemberListProps) => {
   const [form, setForm] = useState({
     search: organization,
   });
+
   const fetchMemberList = async () => {
     setIsLoading(true);
     const response = await getMemberList(form.search, currentPage);
