@@ -1,11 +1,12 @@
 import { Button } from "@mui/material";
+import { AppLayout } from "../../layouts/app/App.layout";
 
 const RickAndMortyDetailsScene = () => {
   return (
-    <div style={{ marginTop: "100px" }}>
+    <AppLayout>
       Details
       <Button>Boton</Button>
-    </div>
+    </AppLayout>
   );
 };
 
