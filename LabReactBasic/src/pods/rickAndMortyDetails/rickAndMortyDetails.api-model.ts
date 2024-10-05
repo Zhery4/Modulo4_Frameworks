@@ -1,4 +1,6 @@
-export interface IRickAndMortyApiModel {
+import { ICommonObject } from "../rickAndMorty/rickAndMorty.api-model";
+
+export interface IRickAndMortyDetailsApiModel {
   id: number;
   name: string;
   status: string;
@@ -8,12 +10,7 @@ export interface IRickAndMortyApiModel {
   origin: ICommonObject;
   location: ICommonObject;
   image: string;
-  episode: string[]; // Array of episode URLs
+  episode: string[];
   url: string;
   created: string;
-}
-
-export interface ICommonObject {
-  name: string;
-  url: string;
 }
