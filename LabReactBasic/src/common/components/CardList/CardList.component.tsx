@@ -29,17 +29,20 @@ export const CardList: React.FC<ICardListProps> = ({ details, apiRoute }) => {
       : navigate(`/${apiRoute}/${details.id}`);
   };
   return (
-    <Card className="Card-List" key={details.id} sx={{ width: "200px" }}>
+    <Card className="Card-List" key={details.id}>
       <CardMedia
         component="img"
-        height={140}
         image={details.image}
         alt={details.name}
         className="Card-List-Image"
       />
-      <CardContent>
+      <CardContent className="Card-Content">
         <Typography variant="h5">{details.name}</Typography>
-        <Button onClick={handleNavigation} color="success">
+        <Button
+          onClick={handleNavigation}
+          variant="contained"
+          color="secondary"
+        >
           Details
         </Button>
       </CardContent>

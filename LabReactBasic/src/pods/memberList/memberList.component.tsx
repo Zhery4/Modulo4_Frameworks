@@ -31,7 +31,7 @@ const MemberList = (props: IMemberListProps) => {
     if (linkHeader) {
       setHasNextPage(linkHeader.includes('rel="next"'));
     } else {
-      setHasNextPage(false); // No next page available
+      setHasNextPage(false);
     }
   };
 

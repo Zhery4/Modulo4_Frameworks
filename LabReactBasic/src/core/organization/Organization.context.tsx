@@ -6,13 +6,11 @@ import React, {
   useMemo,
 } from "react";
 
-// Define the context type
 interface OrganizationContextType {
   organization: string;
   setOrganization: (org: string) => void;
 }
 
-// Create the context with an initial value
 const OrganizationContext = createContext<OrganizationContextType>({
   organization: "lemoncode",
   setOrganization: () => {},

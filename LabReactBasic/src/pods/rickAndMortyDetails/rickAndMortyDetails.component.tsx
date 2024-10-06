@@ -18,19 +18,19 @@ const RickAndMortyDetailsComponent = (props: IRickAndMortyDetailsProps) => {
               <Typography variant="h5" component="div">
                 {character.name}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2">
                 Species: {character.species}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2">
                 Status: {character.status}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2">
                 Origin: {character.origin}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2">
                 Location: {character.location}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2">
                 Episodes in: {character.episodes.length}
               </Typography>
             </CardContent>

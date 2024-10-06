@@ -1,7 +1,13 @@
 .Card-List{
-    width: 200px;
+    width: 220px;
 }
 
 .Card-List-Image{
     height: 200px;
+}
+
+.Card-Content{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
