@@ -3,6 +3,7 @@ import { IMemberDetail } from "./memberDetails.vm";
 import { mapMemberDetailFromApiToVm } from "./memberDetails.mapper";
 import { getMemberDetails } from "./memberDetails.api";
 import { MemberDetails } from "./memberDetails.component";
+import { AppLayout } from "../../layouts/app/App.layout";
 
 interface IMemberDetailProps extends PropsWithChildren {
   id: string;
@@ -19,5 +20,5 @@ export const MemberDetailsContainer = (props: IMemberDetailProps) => {
       console.log(memberMapped);
     });
   }, []);
-  return <div>{<MemberDetails member={member!} />}</div>;
+  return <AppLayout>{<MemberDetails member={member!} />}</AppLayout>;
 };

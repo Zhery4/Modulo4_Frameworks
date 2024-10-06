@@ -10,5 +10,7 @@ export const mapMemberDetailFromApiToVm = (
     name: member.name,
     company: member.company,
     bio: member.bio,
+    imageUrl: member.avatar_url,
+    location: member.location,
   };
 };

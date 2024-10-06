@@ -4,4 +4,6 @@ export interface IMemberDetail {
   name: string;
   company: string;
   bio: string;
+  imageUrl: string;
+  location: string;  
 }
