@@ -8,9 +8,7 @@ import "./memberList.css";
 import { useOrganization } from "../../core/organization/Organization.context";
 import { CardList } from "../../common/components";
 
-interface IMemberListProps {}
-
-const MemberList = (props: IMemberListProps) => {
+const MemberList = () => {
   const [memberList, setMemberList] = useState<IMember[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -47,7 +45,6 @@ const MemberList = (props: IMemberListProps) => {
   };
   return (
     <MemberListContainer>
-      {/* TO-DO Form Component */}
       <form
         className="search-form"
         onSubmit={(e) => {
