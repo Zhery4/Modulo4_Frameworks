@@ -39,7 +39,9 @@ export const CardList: React.FC<ICardListProps> = ({ details, apiRoute }) => {
       />
       <CardContent>
         <Typography variant="h5">{details.name}</Typography>
-        <Button onClick={handleNavigation}>Details</Button>
+        <Button onClick={handleNavigation} color="success">
+          Details
+        </Button>
       </CardContent>
     </Card>
   );

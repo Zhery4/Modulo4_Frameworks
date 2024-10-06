@@ -69,7 +69,7 @@ const MemberList = (props: IMemberListProps) => {
             });
           }}
         />
-        <Button type="submit" variant="contained" color="primary">
+        <Button type="submit" variant="contained" color="secondary">
           Search
         </Button>
       </form>
