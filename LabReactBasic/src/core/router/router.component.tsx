@@ -1,9 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import { HomeScene } from "../../scenes/Home/Home.scene";
 import { switchRoutes } from "./routes";
-import DetailScene from "../../scenes/Details/Detail.scene";
-import { RickAndMortyScene } from "../../scenes/RickAndMorty/rickAndMorty.scene";
-import RickAndMortyDetailsScene from "../../scenes/RickAndMortyDetails/rickAndMortyDetails.scene";
+import {
+  DetailScene,
+  HomeScene,
+  RickAndMortyDetailsScene,
+  RickAndMortyScene,
+} from "../../scenes";
 
 export const RouterComponent = () => {
   return (

@@ -6,7 +6,7 @@ import { mapMemberListFromApiToVm } from "./memberList.mapper";
 import { IMember } from "./memberList.vm";
 import "./memberList.css";
 import { useOrganization } from "../../core/organization/Organization.context";
-import CardList from "../../common/components/CardList/CardList.component";
+import { CardList } from "../../common/components";
 
 interface IMemberListProps {}
 
@@ -81,7 +81,15 @@ const MemberList = (props: IMemberListProps) => {
           <>
             <div className="cards-container">
               {memberList.map((member) => (
-                <CardList key={member.id} details={{id: member.id, name: member.login, image: member.avatar}} apiRoute="detail" />
+                <CardList
+                  key={member.id}
+                  details={{
+                    id: member.id,
+                    name: member.login,
+                    image: member.avatar,
+                  }}
+                  apiRoute="detail"
+                />
               ))}
             </div>
             <div className="page-selector">

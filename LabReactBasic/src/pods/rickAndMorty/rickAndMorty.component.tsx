@@ -1,15 +1,11 @@
-import {
-  Button,
-  Input,
-  Typography,
-} from "@mui/material";
+import { Button, Input, Typography } from "@mui/material";
 import { ICharacter } from "./rickAndMorty.vm";
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import emotionStyled from "@emotion/styled";
 import { getFilteredCharacter } from "./rickAndMorty.api";
 import { mapCharacterListFromApiToVm } from "./rickAndMorty.mapper";
 import { useDebounce } from "@uidotdev/usehooks";
-import CardList from "../../common/components/CardList/CardList.component";
+import { CardList } from "../../common/components";
 
 interface IRickAndMortyProps {
   charactersList: ICharacter[];
@@ -47,7 +43,6 @@ export const RickAndMortyComponent = (props: IRickAndMortyProps) => {
 
   const handleSearch = (e: any) => {
     e.preventDefault();
-    getFilteredCharacter(debouncedSearchTerm).then((response) => {});
   };
 
   useEffect(() => {
@@ -66,10 +61,15 @@ export const RickAndMortyComponent = (props: IRickAndMortyProps) => {
       <SCardContinaer>
         {searchList?.map((character: ICharacter) => {
           return (
-            <CardList 
-              key={character.id} 
-              details={{id: character.id, name: character.name, image: character.image}} 
-              apiRoute="RaMdetail" />
+            <CardList
+              key={character.id}
+              details={{
+                id: character.id,
+                name: character.name,
+                image: character.image,
+              }}
+              apiRoute="RaMdetail"
+            />
           );
         })}
       </SCardContinaer>

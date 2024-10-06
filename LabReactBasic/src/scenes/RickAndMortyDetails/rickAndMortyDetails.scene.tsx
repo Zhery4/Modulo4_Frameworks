@@ -2,7 +2,7 @@ import { AppLayout } from "../../layouts/app/App.layout";
 import RickAndMortyDetailsContainerComponent from "../../pods/rickAndMortyDetails/rickAndMortyDetails.container";
 import { useParams } from "react-router-dom";
 
-const RickAndMortyDetailsScene = () => {
+export const RickAndMortyDetailsScene = () => {
   const { id } = useParams();
 
   return (
@@ -13,5 +13,3 @@ const RickAndMortyDetailsScene = () => {
     </AppLayout>
   );
 };
-
-export default RickAndMortyDetailsScene;

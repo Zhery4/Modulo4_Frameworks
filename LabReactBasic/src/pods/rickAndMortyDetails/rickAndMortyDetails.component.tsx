@@ -1,4 +1,3 @@
-import React from "react";
 import { IRickAndMortyDetailsVm } from "./rickAndMortyDetails.vm";
 import { Card, CardContent, Typography } from "@mui/material";
 

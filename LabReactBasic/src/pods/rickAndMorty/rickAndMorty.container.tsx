@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { RickAndMortyComponent } from "./rickAndMorty.component";
-import { getRickAndMortyCharacters } from "./rickAndMorty.api";
-import { mapCharacterListFromApiToVm } from "./rickAndMorty.mapper";
 import { ICharacter } from "./rickAndMorty.vm";
 import emotionStyled from "@emotion/styled";
 
