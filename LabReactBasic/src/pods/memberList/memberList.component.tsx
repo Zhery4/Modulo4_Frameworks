@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { getMemberList } from "./memberList.api";
 import { mapMemberListFromApiToVm } from "./memberList.mapper";
 import { IMember } from "./memberList.vm";
-import MemberCard from "./components/memberCard/MemberCard.component";
 import "./memberList.css";
 import { useOrganization } from "../../core/organization/Organization.context";
+import CardList from "../../common/components/CardList/CardList.component";
 
 interface IMemberListProps {}
 
@@ -81,7 +81,7 @@ const MemberList = (props: IMemberListProps) => {
           <>
             <div className="cards-container">
               {memberList.map((member) => (
-                <MemberCard key={member.id} member={member} />
+                <CardList key={member.id} details={{id: member.id, name: member.login, image: member.avatar}} apiRoute="detail" />
               ))}
             </div>
             <div className="page-selector">

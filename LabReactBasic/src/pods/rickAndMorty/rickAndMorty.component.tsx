@@ -1,18 +1,15 @@
 import {
   Button,
-  Card,
-  CardContent,
-  CardMedia,
   Input,
   Typography,
 } from "@mui/material";
 import { ICharacter } from "./rickAndMorty.vm";
-import { ChangeEvent, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import emotionStyled from "@emotion/styled";
 import { getFilteredCharacter } from "./rickAndMorty.api";
 import { mapCharacterListFromApiToVm } from "./rickAndMorty.mapper";
-import { useNavigate } from "react-router-dom";
 import { useDebounce } from "@uidotdev/usehooks";
+import CardList from "../../common/components/CardList/CardList.component";
 
 interface IRickAndMortyProps {
   charactersList: ICharacter[];
@@ -39,7 +36,6 @@ const SCardContinaer = emotionStyled.div`
 `;
 
 export const RickAndMortyComponent = (props: IRickAndMortyProps) => {
-  const navigate = useNavigate();
   const [searchList, setSearchList] = useState<ICharacter[]>([]);
   const [form, setForm] = useState({ search: "" });
 
@@ -70,26 +66,10 @@ export const RickAndMortyComponent = (props: IRickAndMortyProps) => {
       <SCardContinaer>
         {searchList?.map((character: ICharacter) => {
           return (
-            <Card key={character.id} sx={{ width: "200px" }}>
-              <CardMedia
-                component="img"
-                height={140}
-                image={character.image}
-                alt={character.name}
-              />
-              <CardContent>
-                <Typography variant="h5">{character.name}</Typography>
-                <Typography variant="body1">{character.species}</Typography>
-                <Typography variant="body1">{character.status}</Typography>
-                <Button
-                  onClick={(e) => {
-                    navigate(`/RaMdetail/${character.id}`);
-                  }}
-                >
-                  Details
-                </Button>
-              </CardContent>
-            </Card>
+            <CardList 
+              key={character.id} 
+              details={{id: character.id, name: character.name, image: character.image}} 
+              apiRoute="RaMdetail" />
           );
         })}
       </SCardContinaer>
