@@ -6,11 +6,9 @@ import { mapMemberListFromApiToVm } from "./memberList.mapper";
 import { IMember } from "./memberList.vm";
 import "./memberList.css";
 import { useOrganization } from "../../core/organization/Organization.context";
-import CardList from "../../common/components/CardList/CardList.component";
+import { CardList } from "../../common/components";
 
-interface IMemberListProps {}
-
-const MemberList = (props: IMemberListProps) => {
+const MemberList = () => {
   const [memberList, setMemberList] = useState<IMember[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,7 +29,7 @@ const MemberList = (props: IMemberListProps) => {
     if (linkHeader) {
       setHasNextPage(linkHeader.includes('rel="next"'));
     } else {
-      setHasNextPage(false); // No next page available
+      setHasNextPage(false);
     }
   };
 
@@ -47,7 +45,6 @@ const MemberList = (props: IMemberListProps) => {
   };
   return (
     <MemberListContainer>
-      {/* TO-DO Form Component */}
       <form
         className="search-form"
         onSubmit={(e) => {
@@ -69,7 +66,7 @@ const MemberList = (props: IMemberListProps) => {
             });
           }}
         />
-        <Button type="submit" variant="contained" color="primary">
+        <Button type="submit" variant="contained" color="secondary">
           Search
         </Button>
       </form>
@@ -81,7 +78,15 @@ const MemberList = (props: IMemberListProps) => {
           <>
             <div className="cards-container">
               {memberList.map((member) => (
-                <CardList key={member.id} details={{id: member.id, name: member.login, image: member.avatar}} apiRoute="detail" />
+                <CardList
+                  key={member.id}
+                  details={{
+                    id: member.id,
+                    name: member.login,
+                    image: member.avatar,
+                  }}
+                  apiRoute="detail"
+                />
               ))}
             </div>
             <div className="page-selector">

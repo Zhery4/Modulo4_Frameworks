@@ -1,21 +1,6 @@
 import emotionStyled from "@emotion/styled";
-import {
-  AppBar,
-  Box,
-  Button,
-  Container,
-  IconButton,
-  Menu,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-
-const SNav = emotionStyled.nav`
-    display: flex;
-    gap: 20px;
-    margin-left: auto;
-`;
 
 const SAppBar = emotionStyled(AppBar)`
 

@@ -2,10 +2,6 @@ import emotionStyled from "@emotion/styled";
 import "./memberList.css";
 import { PropsWithChildren } from "react";
 
-interface IMemberListContainerProps extends PropsWithChildren {
-  // TODO
-}
-
 const SContainer = emotionStyled.div`
     display: flex;
     flex-direction: row;        

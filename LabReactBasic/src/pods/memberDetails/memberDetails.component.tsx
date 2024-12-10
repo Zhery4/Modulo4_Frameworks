@@ -22,7 +22,7 @@ export const MemberDetails = (props: IMemberDetailProps) => {
   const { member } = props;
 
   return (
-<div>
+    <div>
       {member && (
         <SDetails>
           <SImage src={member.imageUrl} alt={member.name} />
@@ -31,34 +31,26 @@ export const MemberDetails = (props: IMemberDetailProps) => {
               <Typography variant="h5" component="div">
                 User: {member.login}
               </Typography>
-              {
-                member.name && (
-                  <Typography variant="body2" color="text.secondary">
-                    Name: {member.name}
-                  </Typography>
-                )
-              }
-              {
-                member.company && (
-                  <Typography variant="body2" color="text.secondary">
-                    Company: {member.company}
-                  </Typography>
-                )
-              }
-              {
-                member.bio && (
-                  <Typography variant="body2" color="text.secondary">
-                    Bio: {member.bio}
-                  </Typography>
-                )
-              }
-              {
-                member.location && (
-                  <Typography variant="body2" color="text.secondary">
-                    Location: {member.location}
-                  </Typography>
-                )
-              }
+              {member.name && (
+                <Typography variant="body2" color="text.secondary">
+                  Name: {member.name}
+                </Typography>
+              )}
+              {member.company && (
+                <Typography variant="body2" color="text.secondary">
+                  Company: {member.company}
+                </Typography>
+              )}
+              {member.bio && (
+                <Typography variant="body2" color="text.secondary">
+                  Bio: {member.bio}
+                </Typography>
+              )}
+              {member.location && (
+                <Typography variant="body2" color="text.secondary">
+                  Location: {member.location}
+                </Typography>
+              )}
             </CardContent>
           </Card>
         </SDetails>

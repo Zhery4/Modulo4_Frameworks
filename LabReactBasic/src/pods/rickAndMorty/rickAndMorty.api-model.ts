@@ -8,7 +8,7 @@ export interface IRickAndMortyApiModel {
   origin: ICommonObject;
   location: ICommonObject;
   image: string;
-  episode: string[]; // Array of episode URLs
+  episode: string[];
   url: string;
   created: string;
 }

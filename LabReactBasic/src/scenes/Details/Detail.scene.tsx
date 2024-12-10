@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { MemberDetailsContainer } from "../../pods/memberDetails/memberDetails.container";
 
-const DetailScene = () => {
+export const DetailScene = () => {
   const { id } = useParams();
   return (
     <div>
@@ -9,5 +9,3 @@ const DetailScene = () => {
     </div>
   );
 };
-
-export default DetailScene;

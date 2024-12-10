@@ -1,41 +1,25 @@
-import {
-  Button,
-  Input,
-  Typography,
-} from "@mui/material";
+import { Input, Typography } from "@mui/material";
 import { ICharacter } from "./rickAndMorty.vm";
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import emotionStyled from "@emotion/styled";
 import { getFilteredCharacter } from "./rickAndMorty.api";
 import { mapCharacterListFromApiToVm } from "./rickAndMorty.mapper";
 import { useDebounce } from "@uidotdev/usehooks";
-import CardList from "../../common/components/CardList/CardList.component";
-
-interface IRickAndMortyProps {
-  charactersList: ICharacter[];
-  setCharacters: (characters: ICharacter[]) => void;
-}
+import { CardList } from "../../common/components";
 
 const SContainer = emotionStyled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
-
-`;
-
-const SForm = emotionStyled.form`
-  align-self: center;
+  gap: 20px;  
 `;
 
 const SCardContinaer = emotionStyled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 1080px;
-  margin: 0 auto;
-  justify-content: space-around;
+  gap: 20px;
 `;
 
-export const RickAndMortyComponent = (props: IRickAndMortyProps) => {
+export const RickAndMortyComponent = () => {
   const [searchList, setSearchList] = useState<ICharacter[]>([]);
   const [form, setForm] = useState({ search: "" });
 
@@ -47,7 +31,6 @@ export const RickAndMortyComponent = (props: IRickAndMortyProps) => {
 
   const handleSearch = (e: any) => {
     e.preventDefault();
-    getFilteredCharacter(debouncedSearchTerm).then((response) => {});
   };
 
   useEffect(() => {
@@ -59,17 +42,25 @@ export const RickAndMortyComponent = (props: IRickAndMortyProps) => {
   return (
     <SContainer>
       <Typography variant="h4">Rick and Morty Characters</Typography>
-      <SForm onSubmit={handleSearch}>
-        <Input value={form.search} onChange={handleChange} />
-        <Button type="submit">Search</Button>
-      </SForm>
+      <form onSubmit={handleSearch}>
+        <Input
+          value={form.search}
+          onChange={handleChange}
+          placeholder="Search the Character"
+        />
+      </form>
       <SCardContinaer>
         {searchList?.map((character: ICharacter) => {
           return (
-            <CardList 
-              key={character.id} 
-              details={{id: character.id, name: character.name, image: character.image}} 
-              apiRoute="RaMdetail" />
+            <CardList
+              key={character.id}
+              details={{
+                id: character.id,
+                name: character.name,
+                image: character.image,
+              }}
+              apiRoute="RaMdetail"
+            />
           );
         })}
       </SCardContinaer>
